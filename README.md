@@ -17,7 +17,7 @@ This is a solution to the [Testimonials grid section challenge on Frontend Mento
 
 ### Links
 
-- [Live Site]()
+- [Live Site](https://rokandic.github.io/practice-FM-testimonials-grid-section/)
 
 ### Built with
 
