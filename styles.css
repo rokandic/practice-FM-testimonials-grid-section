@@ -1,0 +1,207 @@
+/* ROOT */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600&display=swap');
+
+*,*::before,*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+    
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+
+  --light-grayish-blue-05: hsl(210, 46%, 95%,0.5);
+  --light-grayish-blue-07: hsl(210, 46%, 95%,0.7);
+}
+
+html {
+  font-size: calc(13rem/16);
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-color: var(--light-grayish-blue);  
+}
+
+/* VISUALLY HIDE H1 */
+h1 {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip-path: inset(0%);
+}
+
+/* MAIN */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 2em;
+  max-width: 85.25rem;
+  min-height: 44rem;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+
+  background-color: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 2rem 2.5rem 2.25rem;
+
+  position: relative;
+
+  box-shadow: 10px 10px 20px 0 hsl(219, 29%, 14%,0.05);
+
+  &.daniel {
+    background-color: var(--moderate-violet);       
+    grid-column: 1 / span 2;
+    grid-row: 1 / 1;
+    
+    & .bkg {
+      width: 100%;
+      height: 100%;
+      background-image: url(images/bg-pattern-quotation.svg);
+      background-repeat: no-repeat;
+      background-size: 8.5rem;
+      position: absolute;
+      top: 0%;
+      left: 65%;
+      z-index: 0;
+    }
+    & .profile-img {
+      border-color: var(--light-grayish-blue-05);
+    }
+  }
+
+  &.jonathan {
+    background-color: var(--very-dark-grayish-blue);    
+    grid-column: 3 / span 1;
+    grid-row: 1 / 1;
+    
+    & .profile-img {
+      border-color: var(--light-grayish-blue-05);
+    }
+  }
+
+  &.jeanette {
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+  }
+
+  &.patrick {
+    background-color: var(--very-dark-blackish-blue);    
+    grid-column: 2 / span 2;
+    grid-row: 2 / 2;
+
+    & .profile-img {
+      border-color: var(--moderate-violet);
+    }
+  }
+
+  &.kira {
+    grid-column: 4 / span 1;
+    grid-row: 1 / span 2;
+  }
+}
+
+
+/* grid item properties */
+* {
+  z-index: 1;
+}
+
+h2 {
+  letter-spacing: 0.0125rem;
+}
+
+p {
+  opacity: 70%;
+  line-height: 1.4rem;
+}
+
+.light-text {  
+  color: var(--light-grayish-blue);
+}
+
+.dark-text {
+  color: var(--very-dark-grayish-blue);
+}
+
+
+/* grid item - profile, pic */
+.profile-pic-name {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.25rem;
+}
+
+.profile-img {
+  max-height: 2.5rem;
+  border-radius: 50%; 
+  border: 2px solid var(--white);
+}
+
+.grid-item ul {
+  list-style: none;  
+}
+
+
+li:last-child {
+  opacity: 50%;
+  font-size: 0.9rem;
+}
+
+/* FOOTER */
+.attribution { 
+  font-size: 0.8rem; 
+  text-align: center; 
+  margin-bottom: 1rem;
+}
+.attribution a { 
+  color: var(--very-dark-blackish-blue); 
+}
+
+/* MOBILE */
+@media screen and (max-width: 70rem) {
+  .grid-item {
+    padding: 2rem 2.5rem 2.25rem 2.5rem;
+
+  &.daniel, &.jonathan, &.jeanette, &.patrick, &.kira {
+    grid-column: auto;
+    grid-row: auto;
+    }
+  &.daniel {
+    & .bkg {
+      background-size: 8rem;
+      left: 61%;
+    }
+  }    
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 25rem;
+    margin-top: 4rem;    
+  }
+
+  .attribution {
+    margin-top: 2rem;
+  }
+
+  p {
+    word-spacing: 0.05rem;
+  }
+}
