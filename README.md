@@ -24,4 +24,3 @@ This is a solution to the [Testimonials grid section challenge on Frontend Mento
 - Semantic HTML5 markup
 - CSS custom properties 
 - Flexbox, CSS Grid
-- Mobile-first workflow
